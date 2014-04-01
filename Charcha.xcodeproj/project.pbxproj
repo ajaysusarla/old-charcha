@@ -11,7 +11,6 @@
 		D0C7B81618EA812A008F4CB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B81418EA812A008F4CB3 /* InfoPlist.strings */; };
 		D0C7B81818EA812A008F4CB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C7B81718EA812A008F4CB3 /* main.m */; };
 		D0C7B81C18EA812A008F4CB3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B81A18EA812A008F4CB3 /* Credits.rtf */; };
-		D0C7B81F18EA812A008F4CB3 /* CharchaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C7B81E18EA812A008F4CB3 /* CharchaAppDelegate.m */; };
 		D0C7B82218EA812A008F4CB3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B82018EA812A008F4CB3 /* MainMenu.xib */; };
 		D0C7B82518EA812A008F4CB3 /* Charcha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0C7B82318EA812A008F4CB3 /* Charcha.xcdatamodeld */; };
 		D0C7B82718EA812A008F4CB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B82618EA812A008F4CB3 /* Images.xcassets */; };
@@ -19,6 +18,11 @@
 		D0C7B82F18EA812A008F4CB3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C7B80B18EA812A008F4CB3 /* Cocoa.framework */; };
 		D0C7B83718EA812A008F4CB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B83518EA812A008F4CB3 /* InfoPlist.strings */; };
 		D0C7B83918EA812A008F4CB3 /* CharchaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C7B83818EA812A008F4CB3 /* CharchaTests.m */; };
+		D0C7B84318EA814A008F4CB3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C7B84218EA814A008F4CB3 /* WebKit.framework */; };
+		D0C7B84518EA8150008F4CB3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C7B84418EA8150008F4CB3 /* Security.framework */; };
+		D0C7B84C18EA8EF8008F4CB3 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C7B84B18EA8EF8008F4CB3 /* AppController.m */; };
+		D0C7B85018EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B84F18EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict */; };
+		D0C7B85818EAB4BE008F4CB3 /* Growl.framework in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B85518EAA9B0008F4CB3 /* Growl.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,16 +46,21 @@
 		D0C7B81718EA812A008F4CB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0C7B81918EA812A008F4CB3 /* Charcha-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Charcha-Prefix.pch"; sourceTree = "<group>"; };
 		D0C7B81B18EA812A008F4CB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		D0C7B81D18EA812A008F4CB3 /* CharchaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharchaAppDelegate.h; sourceTree = "<group>"; };
-		D0C7B81E18EA812A008F4CB3 /* CharchaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharchaAppDelegate.m; sourceTree = "<group>"; };
 		D0C7B82118EA812A008F4CB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D0C7B82418EA812A008F4CB3 /* Charcha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Charcha.xcdatamodel; sourceTree = "<group>"; };
-		D0C7B82618EA812A008F4CB3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D0C7B82618EA812A008F4CB3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Charcha/Images.xcassets; sourceTree = "<group>"; };
 		D0C7B82C18EA812A008F4CB3 /* CharchaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharchaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C7B82D18EA812A008F4CB3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D0C7B83418EA812A008F4CB3 /* CharchaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CharchaTests-Info.plist"; sourceTree = "<group>"; };
 		D0C7B83618EA812A008F4CB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D0C7B83818EA812A008F4CB3 /* CharchaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharchaTests.m; sourceTree = "<group>"; };
+		D0C7B84218EA814A008F4CB3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D0C7B84418EA8150008F4CB3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D0C7B84618EA816E008F4CB3 /* Charcha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Charcha.entitlements; path = Charcha/Charcha.entitlements; sourceTree = "<group>"; };
+		D0C7B84A18EA8EF8008F4CB3 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = Classes/AppController.h; sourceTree = "<group>"; };
+		D0C7B84B18EA8EF8008F4CB3 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = Classes/AppController.m; sourceTree = "<group>"; };
+		D0C7B84F18EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		D0C7B85518EAA9B0008F4CB3 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C7B84518EA8150008F4CB3 /* Security.framework in Frameworks */,
+				D0C7B84318EA814A008F4CB3 /* WebKit.framework in Frameworks */,
 				D0C7B80C18EA812A008F4CB3 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,7 +89,10 @@
 		D0C7B7FF18EA812A008F4CB3 = {
 			isa = PBXGroup;
 			children = (
-				D0C7B81118EA812A008F4CB3 /* Charcha */,
+				D0C7B81118EA812A008F4CB3 /* Classes */,
+				D0C7B81218EA812A008F4CB3 /* Supporting Files */,
+				D0C7B84718EA81EF008F4CB3 /* Resources */,
+				D0C7B84818EA8B20008F4CB3 /* Other */,
 				D0C7B83218EA812A008F4CB3 /* CharchaTests */,
 				D0C7B80A18EA812A008F4CB3 /* Frameworks */,
 				D0C7B80918EA812A008F4CB3 /* Products */,
@@ -97,6 +111,9 @@
 		D0C7B80A18EA812A008F4CB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0C7B85518EAA9B0008F4CB3 /* Growl.framework */,
+				D0C7B84418EA8150008F4CB3 /* Security.framework */,
+				D0C7B84218EA814A008F4CB3 /* WebKit.framework */,
 				D0C7B80B18EA812A008F4CB3 /* Cocoa.framework */,
 				D0C7B82D18EA812A008F4CB3 /* XCTest.framework */,
 				D0C7B80D18EA812A008F4CB3 /* Other Frameworks */,
@@ -114,16 +131,14 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		D0C7B81118EA812A008F4CB3 /* Charcha */ = {
+		D0C7B81118EA812A008F4CB3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D0C7B81D18EA812A008F4CB3 /* CharchaAppDelegate.h */,
-				D0C7B81E18EA812A008F4CB3 /* CharchaAppDelegate.m */,
-				D0C7B82018EA812A008F4CB3 /* MainMenu.xib */,
-				D0C7B82618EA812A008F4CB3 /* Images.xcassets */,
-				D0C7B82318EA812A008F4CB3 /* Charcha.xcdatamodeld */,
-				D0C7B81218EA812A008F4CB3 /* Supporting Files */,
+				D0C7B84A18EA8EF8008F4CB3 /* AppController.h */,
+				D0C7B84B18EA8EF8008F4CB3 /* AppController.m */,
+				D0C7B85718EAAB3B008F4CB3 /* Preferences */,
 			);
+			name = Classes;
 			path = Charcha;
 			sourceTree = "<group>";
 		};
@@ -134,9 +149,9 @@
 				D0C7B81418EA812A008F4CB3 /* InfoPlist.strings */,
 				D0C7B81718EA812A008F4CB3 /* main.m */,
 				D0C7B81918EA812A008F4CB3 /* Charcha-Prefix.pch */,
-				D0C7B81A18EA812A008F4CB3 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			path = Charcha;
 			sourceTree = "<group>";
 		};
 		D0C7B83218EA812A008F4CB3 /* CharchaTests */ = {
@@ -155,6 +170,33 @@
 				D0C7B83518EA812A008F4CB3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0C7B84718EA81EF008F4CB3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D0C7B84F18EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict */,
+				D0C7B84618EA816E008F4CB3 /* Charcha.entitlements */,
+				D0C7B82318EA812A008F4CB3 /* Charcha.xcdatamodeld */,
+				D0C7B82618EA812A008F4CB3 /* Images.xcassets */,
+				D0C7B82018EA812A008F4CB3 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D0C7B84818EA8B20008F4CB3 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D0C7B81A18EA812A008F4CB3 /* Credits.rtf */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		D0C7B85718EAAB3B008F4CB3 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +247,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Parthasarathi Susarla";
 				TargetAttributes = {
+					D0C7B80718EA812A008F4CB3 = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					D0C7B82B18EA812A008F4CB3 = {
 						TestTargetID = D0C7B80718EA812A008F4CB3;
 					};
@@ -234,8 +283,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C7B85818EAB4BE008F4CB3 /* Growl.framework in Resources */,
 				D0C7B81618EA812A008F4CB3 /* InfoPlist.strings in Resources */,
 				D0C7B82718EA812A008F4CB3 /* Images.xcassets in Resources */,
+				D0C7B85018EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict in Resources */,
 				D0C7B81C18EA812A008F4CB3 /* Credits.rtf in Resources */,
 				D0C7B82218EA812A008F4CB3 /* MainMenu.xib in Resources */,
 			);
@@ -257,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0C7B81818EA812A008F4CB3 /* main.m in Sources */,
-				D0C7B81F18EA812A008F4CB3 /* CharchaAppDelegate.m in Sources */,
+				D0C7B84C18EA8EF8008F4CB3 /* AppController.m in Sources */,
 				D0C7B82518EA812A008F4CB3 /* Charcha.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +346,7 @@
 				D0C7B81B18EA812A008F4CB3 /* en */,
 			);
 			name = Credits.rtf;
+			path = Charcha;
 			sourceTree = "<group>";
 		};
 		D0C7B82018EA812A008F4CB3 /* MainMenu.xib */ = {
@@ -303,6 +355,7 @@
 				D0C7B82118EA812A008F4CB3 /* Base */,
 			);
 			name = MainMenu.xib;
+			path = Charcha;
 			sourceTree = "<group>";
 		};
 		D0C7B83518EA812A008F4CB3 /* InfoPlist.strings */ = {
@@ -388,10 +441,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Charcha/Charcha.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ajaysusarla/Projects/Charcha,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Charcha/Charcha-Prefix.pch";
 				INFOPLIST_FILE = "Charcha/Charcha-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ajaysusarla/Downloads/Growl-2.0.1-SDK/Framework/Growl.framework/Versions/A",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -401,10 +464,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Charcha/Charcha.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ajaysusarla/Projects/Charcha,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Charcha/Charcha-Prefix.pch";
 				INFOPLIST_FILE = "Charcha/Charcha-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ajaysusarla/Downloads/Growl-2.0.1-SDK/Framework/Growl.framework/Versions/A",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -487,7 +560,8 @@
 				D0C7B82418EA812A008F4CB3 /* Charcha.xcdatamodel */,
 			);
 			currentVersion = D0C7B82418EA812A008F4CB3 /* Charcha.xcdatamodel */;
-			path = Charcha.xcdatamodeld;
+			name = Charcha.xcdatamodeld;
+			path = Charcha/Charcha.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
