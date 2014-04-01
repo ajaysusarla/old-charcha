@@ -23,6 +23,7 @@
 		D0C7B84C18EA8EF8008F4CB3 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C7B84B18EA8EF8008F4CB3 /* AppController.m */; };
 		D0C7B85018EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B84F18EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict */; };
 		D0C7B85818EAB4BE008F4CB3 /* Growl.framework in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B85518EAA9B0008F4CB3 /* Growl.framework */; };
+		D0C7B85A18EADFBD008F4CB3 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B85918EADFBD008F4CB3 /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D0C7B84B18EA8EF8008F4CB3 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = Classes/AppController.m; sourceTree = "<group>"; };
 		D0C7B84F18EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		D0C7B85518EAA9B0008F4CB3 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		D0C7B85918EADFBD008F4CB3 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				D0C7B81A18EA812A008F4CB3 /* Credits.rtf */,
+				D0C7B85918EADFBD008F4CB3 /* Readme.md */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C7B85A18EADFBD008F4CB3 /* Readme.md in Resources */,
 				D0C7B85818EAB4BE008F4CB3 /* Growl.framework in Resources */,
 				D0C7B81618EA812A008F4CB3 /* InfoPlist.strings in Resources */,
 				D0C7B82718EA812A008F4CB3 /* Images.xcassets in Resources */,
