@@ -14,11 +14,13 @@
 
 @implementation setupAssistantController
 
-- (id)initWithWindow:(NSWindow *)window
+- (id)init
 {
-    self = [super initWithWindow:window];
+    self = [super init];
     if (self) {
-        // Initialization code here.
+        [[NSBundle mainBundle] loadNibNamed:@"setupAssistantController"
+                                      owner:self
+                            topLevelObjects:nil];
     }
     return self;
 }
@@ -29,5 +31,23 @@
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
+
+- (void)show
+{
+    printf("setupAssistantController: show\n");
+    if (![self.window isVisible]) {
+        [self.window center];
+        printf("setupAssistantController: should show\n");
+    }
+    
+    [self.window makeKeyAndOrderFront:nil];
+}
+
+- (void)close
+{
+    _delegate = nil;
+    [self.window close];
+}
+
 
 @end

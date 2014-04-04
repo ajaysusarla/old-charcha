@@ -4,7 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="pWM-Po-ofS" id="LYA-uS-wyb"/>
+            </connections>
+        </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
@@ -642,7 +646,7 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Charcha" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371" customClass="MainWindow">
+        <window title="Charcha" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="371" customClass="MainWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="388" y="273" width="480" height="360"/>
@@ -652,15 +656,15 @@
                 <autoresizingMask key="autoresizingMask"/>
             </view>
             <connections>
-                <outlet property="delegate" destination="pWM-Po-ofS" id="JEP-P8-Kbo"/>
+                <outlet property="delegate" destination="pWM-Po-ofS" id="5E4-ZX-gQA"/>
             </connections>
         </window>
-        <customObject id="494" customClass="MainWindow"/>
         <customObject id="420" customClass="NSFontManager"/>
         <customObject id="pWM-Po-ofS" customClass="AppController">
             <connections>
-                <outlet property="mainWindow" destination="371" id="mCR-64-AyW"/>
+                <outlet property="mainWindow" destination="371" id="mtb-fi-vcC"/>
             </connections>
         </customObject>
+        <customObject id="494" customClass="MainWindow"/>
     </objects>
 </document>

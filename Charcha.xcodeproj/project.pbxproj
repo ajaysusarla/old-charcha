@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D026C0AD18EE85790017DD26 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = D026C0AC18EE85790017DD26 /* AppController.m */; };
+		D026C0B118EE9B750017DD26 /* setupAssistantController.m in Sources */ = {isa = PBXBuildFile; fileRef = D026C0AF18EE9B750017DD26 /* setupAssistantController.m */; };
+		D026C0B218EE9B750017DD26 /* setupAssistantController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D026C0B018EE9B750017DD26 /* setupAssistantController.xib */; };
 		D0C7B80C18EA812A008F4CB3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C7B80B18EA812A008F4CB3 /* Cocoa.framework */; };
 		D0C7B81618EA812A008F4CB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B81418EA812A008F4CB3 /* InfoPlist.strings */; };
 		D0C7B81818EA812A008F4CB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C7B81718EA812A008F4CB3 /* main.m */; };
@@ -20,7 +23,6 @@
 		D0C7B83918EA812A008F4CB3 /* CharchaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C7B83818EA812A008F4CB3 /* CharchaTests.m */; };
 		D0C7B84318EA814A008F4CB3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C7B84218EA814A008F4CB3 /* WebKit.framework */; };
 		D0C7B84518EA8150008F4CB3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C7B84418EA8150008F4CB3 /* Security.framework */; };
-		D0C7B84C18EA8EF8008F4CB3 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C7B84B18EA8EF8008F4CB3 /* AppController.m */; };
 		D0C7B85018EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B84F18EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict */; };
 		D0C7B85A18EADFBD008F4CB3 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B85918EADFBD008F4CB3 /* Readme.md */; };
 		D0C7B87018EC362A008F4CB3 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C7B86D18EC34F1008F4CB3 /* Growl.framework */; };
@@ -52,6 +54,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D026C0AB18EE85790017DD26 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		D026C0AC18EE85790017DD26 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		D026C0AE18EE9B750017DD26 /* setupAssistantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = setupAssistantController.h; path = Classes/setupAssistantController.h; sourceTree = "<group>"; };
+		D026C0AF18EE9B750017DD26 /* setupAssistantController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = setupAssistantController.m; path = Classes/setupAssistantController.m; sourceTree = "<group>"; };
+		D026C0B018EE9B750017DD26 /* setupAssistantController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = setupAssistantController.xib; path = Classes/setupAssistantController.xib; sourceTree = "<group>"; };
 		D0C7B80818EA812A008F4CB3 /* Charcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C7B80B18EA812A008F4CB3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D0C7B80E18EA812A008F4CB3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -73,8 +80,6 @@
 		D0C7B84218EA814A008F4CB3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D0C7B84418EA8150008F4CB3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D0C7B84618EA816E008F4CB3 /* Charcha.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Charcha.entitlements; path = Charcha/Charcha.entitlements; sourceTree = "<group>"; };
-		D0C7B84A18EA8EF8008F4CB3 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = Classes/AppController.h; sourceTree = "<group>"; };
-		D0C7B84B18EA8EF8008F4CB3 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = Classes/AppController.m; sourceTree = "<group>"; };
 		D0C7B84F18EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		D0C7B85918EADFBD008F4CB3 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 		D0C7B86D18EC34F1008F4CB3 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
@@ -106,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D026C0AA18EE834A0017DD26 /* Bundled Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0C7B86D18EC34F1008F4CB3 /* Growl.framework */,
+			);
+			name = "Bundled Frameworks";
+			sourceTree = "<group>";
+		};
 		D0C7B7FF18EA812A008F4CB3 = {
 			isa = PBXGroup;
 			children = (
@@ -132,12 +145,12 @@
 		D0C7B80A18EA812A008F4CB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0C7B86D18EC34F1008F4CB3 /* Growl.framework */,
 				D0C7B84418EA8150008F4CB3 /* Security.framework */,
 				D0C7B84218EA814A008F4CB3 /* WebKit.framework */,
 				D0C7B80B18EA812A008F4CB3 /* Cocoa.framework */,
 				D0C7B82D18EA812A008F4CB3 /* XCTest.framework */,
 				D0C7B80D18EA812A008F4CB3 /* Other Frameworks */,
+				D026C0AA18EE834A0017DD26 /* Bundled Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,8 +168,8 @@
 		D0C7B81118EA812A008F4CB3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D0C7B84A18EA8EF8008F4CB3 /* AppController.h */,
-				D0C7B84B18EA8EF8008F4CB3 /* AppController.m */,
+				D026C0AB18EE85790017DD26 /* AppController.h */,
+				D026C0AC18EE85790017DD26 /* AppController.m */,
 				D0C7B86018EBCDF5008F4CB3 /* SetupAssistant */,
 				D0C7B87618ED528E008F4CB3 /* MainWindow */,
 				D0C7B85718EAAB3B008F4CB3 /* Preferences */,
@@ -249,6 +262,9 @@
 		D0C7B86018EBCDF5008F4CB3 /* SetupAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				D026C0AE18EE9B750017DD26 /* setupAssistantController.h */,
+				D026C0AF18EE9B750017DD26 /* setupAssistantController.m */,
+				D026C0B018EE9B750017DD26 /* setupAssistantController.xib */,
 			);
 			name = SetupAssistant;
 			sourceTree = "<group>";
@@ -347,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D026C0B218EE9B750017DD26 /* setupAssistantController.xib in Resources */,
 				D0C7B85A18EADFBD008F4CB3 /* Readme.md in Resources */,
 				D0C7B81618EA812A008F4CB3 /* InfoPlist.strings in Resources */,
 				D0C7B82718EA812A008F4CB3 /* Images.xcassets in Resources */,
@@ -373,8 +390,9 @@
 			files = (
 				D0C7B81818EA812A008F4CB3 /* main.m in Sources */,
 				D0C7B87518ED5281008F4CB3 /* MainWindow.m in Sources */,
-				D0C7B84C18EA8EF8008F4CB3 /* AppController.m in Sources */,
 				D0C7B82518EA812A008F4CB3 /* Charcha.xcdatamodeld in Sources */,
+				D026C0B118EE9B750017DD26 /* setupAssistantController.m in Sources */,
+				D026C0AD18EE85790017DD26 /* AppController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
