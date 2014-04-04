@@ -80,6 +80,11 @@ static const NSTimeInterval _userAttentionRequestInterval = 8.0;
     return self;
 }
 
+- (void)awakeFromNib
+{
+    printf("Awake from Nib\n");
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -93,7 +98,8 @@ static const NSTimeInterval _userAttentionRequestInterval = 8.0;
 
 -(IBAction)setupOnFirstLaunch:(id)sender
 {
-    
+    [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
+    [GrowlApplicationBridge setGrowlDelegate:self];
 }
 
 -(void)startUserAttentionTimer
@@ -151,8 +157,21 @@ static const NSTimeInterval _userAttentionRequestInterval = 8.0;
 #pragma mark NSApplication delegate methods
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Application control will start from here
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
     printf("application did finish launch\n");
+
+    if (1) { //Add acounts if there are none
+        printf("Adding account by default\n");
+    
+        return;
+    } else { //Else start the main window
+    }
+    
+    [NSUserNotificationCenter defaultUserNotificationCenter].delegate = self;
+    [GrowlApplicationBridge setGrowlDelegate:self];
+
 }
 
 // Reopen all Charcha windows when dock icon is clicked

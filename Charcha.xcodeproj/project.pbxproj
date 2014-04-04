@@ -22,8 +22,10 @@
 		D0C7B84518EA8150008F4CB3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C7B84418EA8150008F4CB3 /* Security.framework */; };
 		D0C7B84C18EA8EF8008F4CB3 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C7B84B18EA8EF8008F4CB3 /* AppController.m */; };
 		D0C7B85018EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B84F18EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict */; };
-		D0C7B85818EAB4BE008F4CB3 /* Growl.framework in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B85518EAA9B0008F4CB3 /* Growl.framework */; };
 		D0C7B85A18EADFBD008F4CB3 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = D0C7B85918EADFBD008F4CB3 /* Readme.md */; };
+		D0C7B87018EC362A008F4CB3 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C7B86D18EC34F1008F4CB3 /* Growl.framework */; };
+		D0C7B87218EC3980008F4CB3 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D0C7B86D18EC34F1008F4CB3 /* Growl.framework */; };
+		D0C7B87518ED5281008F4CB3 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C7B87418ED5281008F4CB3 /* MainWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,19 @@
 			remoteInfo = Charcha;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D0C7B87118EC3967008F4CB3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D0C7B87218EC3980008F4CB3 /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D0C7B80818EA812A008F4CB3 /* Charcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,8 +76,10 @@
 		D0C7B84A18EA8EF8008F4CB3 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = Classes/AppController.h; sourceTree = "<group>"; };
 		D0C7B84B18EA8EF8008F4CB3 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = Classes/AppController.m; sourceTree = "<group>"; };
 		D0C7B84F18EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
-		D0C7B85518EAA9B0008F4CB3 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		D0C7B85918EADFBD008F4CB3 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
+		D0C7B86D18EC34F1008F4CB3 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		D0C7B87318ED5281008F4CB3 /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainWindow.h; path = Classes/MainWindow.h; sourceTree = "<group>"; };
+		D0C7B87418ED5281008F4CB3 /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainWindow.m; path = Classes/MainWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C7B87018EC362A008F4CB3 /* Growl.framework in Frameworks */,
 				D0C7B84518EA8150008F4CB3 /* Security.framework in Frameworks */,
 				D0C7B84318EA814A008F4CB3 /* WebKit.framework in Frameworks */,
 				D0C7B80C18EA812A008F4CB3 /* Cocoa.framework in Frameworks */,
@@ -91,7 +109,8 @@
 		D0C7B7FF18EA812A008F4CB3 = {
 			isa = PBXGroup;
 			children = (
-				D0C7B81118EA812A008F4CB3 /* Classes */,
+				D0C7B81118EA812A008F4CB3 /* Controllers */,
+				D0C7B85D18EAF285008F4CB3 /* Library */,
 				D0C7B81218EA812A008F4CB3 /* Supporting Files */,
 				D0C7B84718EA81EF008F4CB3 /* Resources */,
 				D0C7B84818EA8B20008F4CB3 /* Other */,
@@ -113,7 +132,7 @@
 		D0C7B80A18EA812A008F4CB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0C7B85518EAA9B0008F4CB3 /* Growl.framework */,
+				D0C7B86D18EC34F1008F4CB3 /* Growl.framework */,
 				D0C7B84418EA8150008F4CB3 /* Security.framework */,
 				D0C7B84218EA814A008F4CB3 /* WebKit.framework */,
 				D0C7B80B18EA812A008F4CB3 /* Cocoa.framework */,
@@ -133,14 +152,16 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		D0C7B81118EA812A008F4CB3 /* Classes */ = {
+		D0C7B81118EA812A008F4CB3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				D0C7B84A18EA8EF8008F4CB3 /* AppController.h */,
 				D0C7B84B18EA8EF8008F4CB3 /* AppController.m */,
+				D0C7B86018EBCDF5008F4CB3 /* SetupAssistant */,
+				D0C7B87618ED528E008F4CB3 /* MainWindow */,
 				D0C7B85718EAAB3B008F4CB3 /* Preferences */,
 			);
-			name = Classes;
+			name = Controllers;
 			path = Charcha;
 			sourceTree = "<group>";
 		};
@@ -202,6 +223,45 @@
 			name = Preferences;
 			sourceTree = "<group>";
 		};
+		D0C7B85D18EAF285008F4CB3 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				D0C7B85F18EAF2A5008F4CB3 /* Network */,
+				D0C7B85E18EAF29C008F4CB3 /* IRC */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		D0C7B85E18EAF29C008F4CB3 /* IRC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = IRC;
+			sourceTree = "<group>";
+		};
+		D0C7B85F18EAF2A5008F4CB3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		D0C7B86018EBCDF5008F4CB3 /* SetupAssistant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SetupAssistant;
+			sourceTree = "<group>";
+		};
+		D0C7B87618ED528E008F4CB3 /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				D0C7B87318ED5281008F4CB3 /* MainWindow.h */,
+				D0C7B87418ED5281008F4CB3 /* MainWindow.m */,
+			);
+			name = MainWindow;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,6 +272,7 @@
 				D0C7B80418EA812A008F4CB3 /* Sources */,
 				D0C7B80518EA812A008F4CB3 /* Frameworks */,
 				D0C7B80618EA812A008F4CB3 /* Resources */,
+				D0C7B87118EC3967008F4CB3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -287,7 +348,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0C7B85A18EADFBD008F4CB3 /* Readme.md in Resources */,
-				D0C7B85818EAB4BE008F4CB3 /* Growl.framework in Resources */,
 				D0C7B81618EA812A008F4CB3 /* InfoPlist.strings in Resources */,
 				D0C7B82718EA812A008F4CB3 /* Images.xcassets in Resources */,
 				D0C7B85018EA918F008F4CB3 /* Growl Registration Ticket.growlRegDict in Resources */,
@@ -312,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0C7B81818EA812A008F4CB3 /* main.m in Sources */,
+				D0C7B87518ED5281008F4CB3 /* MainWindow.m in Sources */,
 				D0C7B84C18EA8EF8008F4CB3 /* AppController.m in Sources */,
 				D0C7B82518EA812A008F4CB3 /* Charcha.xcdatamodeld in Sources */,
 			);
@@ -455,10 +516,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Charcha/Charcha-Prefix.pch";
 				INFOPLIST_FILE = "Charcha/Charcha-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/ajaysusarla/Downloads/Growl-2.0.1-SDK/Framework/Growl.framework/Versions/A",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -478,10 +536,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Charcha/Charcha-Prefix.pch";
 				INFOPLIST_FILE = "Charcha/Charcha-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/ajaysusarla/Downloads/Growl-2.0.1-SDK/Framework/Growl.framework/Versions/A",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -546,6 +601,7 @@
 				D0C7B83E18EA812A008F4CB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0C7B83F18EA812A008F4CB3 /* Build configuration list for PBXNativeTarget "CharchaTests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +610,7 @@
 				D0C7B84118EA812A008F4CB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
