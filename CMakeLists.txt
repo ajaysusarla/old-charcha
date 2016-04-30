@@ -9,7 +9,6 @@ MACRO_ENSURE_OUT_OF_SOURCE_BUILD(
 )
 
 ## Options ##
-
 # Tests
 option(MAKE_TESTS "Make the tests" OFF)
 
@@ -19,11 +18,17 @@ find_package(Qt5 REQUIRED COMPONENTS Core Widgets Network Test)
 set(QT_LIBRARIES Qt5::Core Qt5::Widgets Qt5::Network)
 set(QT_TEST_LIBRARIES ${QT_LIBRARIES} Qt5::Test)
 
+## Subdirectories ##
+add_subdirectory(core-lib)
+add_subdirectory(ui-lib)
 
+add_executable(charcha main.cpp)
 
-add_executable(charcha charcha-main.cpp)
-
-target_link_libraries(charcha ${QT_LIBRARIES})
+target_link_libraries(charcha
+        charcha_core_lib
+	charcha_ui_lib
+	${QT_LIBRARIES}
+)
 
 
 if (MAKE_TESTS)
