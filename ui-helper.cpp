@@ -11,30 +11,35 @@
 // You should have received a copy of the GNU Lesser General Public
 // License along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-#include <stdio.h>
 
-#include <iostream>
-
-#include <QApplication>
-
-#include "core-lib/qt-gui.h"
 #include "ui-lib/mainwindow.h"
 
-int main(int argc, char **argv)
+#include <QApplication>
+#include <QDesktopWidget>
+
+static MainWindow *window = NULL;
+
+void charcha_init_ui(void)
 {
-        QApplication *application = new QApplication(argc, argv);
-        (void)application;
-
-        std::cout << "[charcha] Hello, World!\n";
-
-        charcha_init_ui();
-
-        MainWindow *m = MainWindow::instance();
-
-        charcha_run_ui();
-
-        charcha_exit_ui();
-
-        return 0;
+        window = new MainWindow();
 }
 
+
+void charcha_run_ui(void)
+{
+        window->show();
+        qApp->exec();
+}
+
+
+void charcha_exit_ui(void)
+{
+        delete window;
+        delete qApp;
+}
+
+double get_screen_dpi(void)
+{
+        QDesktopWidget *mydesk = qApp->desktop();
+        return mydesk->physicalDpiX();
+}
