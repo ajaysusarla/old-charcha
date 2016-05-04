@@ -22,15 +22,23 @@ set(QT_TEST_LIBRARIES ${QT_LIBRARIES} Qt5::Test)
 add_subdirectory(core-lib)
 add_subdirectory(ui-lib)
 
-add_executable(charcha
+add_executable(charcha-qt
         ui-helper.cpp
-        main.cpp
+        qt-main.cpp
 )
 
-target_link_libraries(charcha
+add_executable(charcha-nc
+        nc-main.c
+)
+
+target_link_libraries(charcha-qt
         charcha_core_lib
 	charcha_ui_lib
 	${QT_LIBRARIES}
+)
+
+target_link_libraries(charcha-nc
+        charcha_core_lib
 )
 
 

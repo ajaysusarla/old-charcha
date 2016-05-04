@@ -2,7 +2,9 @@ message(STATUS "Building core library for ${CMAKE_SYSTEM_NAME}")
 
 # Core Library
 set(CHARCHA_CORE_LIB_SRCS
-        core.c
+        charcha.c
+        net_tcp.c
+        net_ssl.c
 )
 
 source_group("Charcha Core Library" FILES ${CHARCHA_CORE_LIB_SRCS})
