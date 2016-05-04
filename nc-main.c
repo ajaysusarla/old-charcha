@@ -155,6 +155,10 @@ int main(int argc, char **argv)
         }
 
         sockfd = net_tcp_socket_open(DFL_HOST, DFL_PORT, 0);
+        if (!sockfd) {
+                fprintf(stderr, "Failed to connect to %s:%d\n", DFL_HOST, DFL_PORT);
+                exit(EXIT_FAILURE);
+        }
 
         printf("Connecting to %s:%d...", DFL_HOST, DFL_PORT);
         if (!sockfd) {
