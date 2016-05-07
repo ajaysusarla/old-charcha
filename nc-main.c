@@ -89,17 +89,40 @@ static void irc_login(int sockfd, char *nick, char *fullname, char *host)
         net_tcp_socket_write(sockfd, msg, strlen(msg));
 }
 
+static void process_server_msg(int sockfd, char *buf)
+{
+        if (!strncmp(buf, "PING ", 5)) {
+                char str[512] = { 0 };
+                sprintf(str, "PONG %s\r\n", buf + 5);
+                net_tcp_socket_write(sockfd, str, strlen(str));
+        }
+}
+
+static void process_msg(int sockfd, char *buf)
+{
+        if (!buf || !buf[0]) {
+                fprintf(stderr, "Internal Error!\n");
+                exit(EXIT_FAILURE);
+        }
+
+        /* Process server message */
+        if (buf[0] != ':') {
+                process_server_msg(sockfd, buf);
+                return;
+        }
+}
+
 static void irc(int sockfd)
 {
         fd_set readfds;
         struct timeval tv;
         int ret;
         static time_t ping;
-        char pong_msg[512];
+        char ping_msg[512];
         char buf[BUF_SIZE] = { 0 };
         int nread;
 
-        snprintf(pong_msg, sizeof(pong_msg), "PONG %s\r\n", DFL_HOST);
+        snprintf(ping_msg, sizeof(ping_msg), "PING %s\r\n", DFL_HOST);
 
         while (1) {
                 FD_ZERO(&readfds);
@@ -120,20 +143,23 @@ static void irc(int sockfd)
                                 exit(EXIT_FAILURE);
                         }
 
-                        net_tcp_socket_write(sockfd, pong_msg, strlen(pong_msg));
+                        net_tcp_socket_write(sockfd, ping_msg, strlen(ping_msg));
                 }
 
                 if (FD_ISSET(sockfd, &readfds)) {
                         ping = time(NULL);
                         nread = net_tcp_socket_read(sockfd, buf, BUF_SIZE);
-                        write(STDOUT, buf, nread);
+                        if (nread >= 0) {
+                                process_msg(sockfd, buf);
+                                write(STDOUT, buf, nread);
+                        }
                 }
 
                 if (FD_ISSET(STDIN, &readfds)) {
                         nread = read(STDIN, buf, BUF_SIZE);
-                        if (nread <= 0 )
-                                break;
-                        net_tcp_socket_write(sockfd, buf, nread);
+                        if (nread >= 0) {
+                                net_tcp_socket_write(sockfd, buf, nread);
+                        }
                 }
 
                 memset(buf, 0, BUF_SIZE);
