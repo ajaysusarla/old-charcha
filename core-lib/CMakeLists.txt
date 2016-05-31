@@ -5,6 +5,7 @@ set(CHARCHA_CORE_LIB_SRCS
         charcha.c
         net_tcp.c
         net_ssl.c
+        irc-core.c
 )
 
 source_group("Charcha Core Library" FILES ${CHARCHA_CORE_LIB_SRCS})
