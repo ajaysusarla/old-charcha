@@ -5,6 +5,7 @@ set(CHARCHA_CORE_LIB_SRCS
         charcha.c
         net_tcp.c
         net_ssl.c
+        cstring.c
         irc-core.c
 )
 
