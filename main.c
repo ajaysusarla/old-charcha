@@ -97,6 +97,36 @@ static void irc_login(int sockfd, char *nick, char *fullname, char *host)
         net_tcp_socket_write(sockfd, msg, strlen(msg));
 }
 
+static size_t tokenize(char *proc_buf, char *msg,
+                       char **word, char **word_eol)
+{
+        size_t num_toks;
+        char *str;
+
+        if (!msg)
+                return 0;
+
+        word[0] = "\000";
+        word_eol[0] = "\000";
+        word[1] = proc_buf;
+        word[1] = msg;
+
+        while (1) {
+                switch (*msg) {
+                case 0:
+                        break;
+                case '"':
+                        break;
+                case ' ':
+                        break;
+                default:
+                        break;
+                }
+        }
+
+        return num_toks;
+}
+
 static void process_server_msg(int sockfd, char *buf)
 {
         if (!strncmp(buf, "PING ", 5)) {
@@ -108,16 +138,34 @@ static void process_server_msg(int sockfd, char *buf)
 
 static void process_msg(int sockfd, char *buf)
 {
+        char *word[32 + 1];
+        char *word_eol[32 + 1];
+        char *token_buf = NULL;
+
         if (!buf || !buf[0]) {
                 fprintf(stderr, "Internal Error!\n");
                 exit(EXIT_FAILURE);
         }
 
+        token_buf = malloc(strlen(buf) + 1);
+        if (token_buf == NULL) {
+                fprintf(stderr, "Memory allocation failure!\n");
+                exit(EXIT_FAILURE);
+        }
+
+        tokenize(token_buf, buf, word, word_eol);
         /* Process server message */
+        if (buf[0] == ':') {
+        }
+
         if (buf[0] != ':') {
                 process_server_msg(sockfd, buf);
-                return;
+                goto cleanup;
         }
+
+cleanup:
+        free(token_buf);
+        token_buf = NULL;
 }
 
 static void irc(int sockfd)
@@ -188,15 +236,10 @@ int main(int argc, char **argv)
                 }
         }
 
+        printf("Connecting to %s:%d...", DFL_HOST, DFL_PORT);
         sockfd = net_tcp_socket_open(DFL_HOST, DFL_PORT, 0);
         if (!sockfd) {
                 fprintf(stderr, "Failed to connect to %s:%d\n", DFL_HOST, DFL_PORT);
-                exit(EXIT_FAILURE);
-        }
-
-        printf("Connecting to %s:%d...", DFL_HOST, DFL_PORT);
-        if (!sockfd) {
-                fprintf(stderr, "Error connecting to %s on %d", DFL_HOST, DFL_PORT);
                 exit(EXIT_FAILURE);
         }
         printf("...Done!\n");

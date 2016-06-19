@@ -27,8 +27,8 @@ add_executable(charcha-qt
         qt-main.cpp
 )
 
-add_executable(charcha-nc
-        nc-main.c
+add_executable(charcha
+        main.c
 )
 
 target_link_libraries(charcha-qt
@@ -37,7 +37,7 @@ target_link_libraries(charcha-qt
 	${QT_LIBRARIES}
 )
 
-target_link_libraries(charcha-nc
+target_link_libraries(charcha
         charcha_core_lib
 )
 

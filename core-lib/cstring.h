@@ -13,12 +13,14 @@
  * License along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
  *
- * cstring - A tiny string library
+ * cstring - String handling library based of git's strbuf implementation.
  */
 
 #ifndef _CSTRING_H_
 #define _CSTRING_H_
 
+#include <stdio.h>
+#include <stdlib.h>
 
 struct _cstring {
         size_t len;
@@ -27,11 +29,35 @@ struct _cstring {
 };
 
 typedef struct _cstring cstring;
+extern char cstring_base[];
+#define CSTRING_INIT {0, 0, cstring_base};
 
+/* cstring_init():
+ * Initialise the cstring structure.
+ *
+ */
+void cstring_init(cstring *cstr, size_t len);
 
-void cstring_new(cstring *cstr, size_t len);
-void cstring_free(cstring *cstr);
+/* cstring_release():
+ * Release the cstring structure and memory.
+ */
+void cstring_release(cstring *cstr);
+
+/* cstring_detach():
+ * The caller needs to free(), the string returned.
+ */
+char *cstring_detach(cstring *cstr, size_t *len);
+
+/* cstring_attach():
+ * Attach a string to a cstring buffer. You should
+ * specify the string to attach, the length of string and
+ * the amount of allocated memory. The amount should be
+ * larger than the string length. This string must be
+ * malloc()ed, and after attaching shouldn't be free()d.
+ */
+void cstring_attach(cstring *cstr, void *buf, size_t len, size_t alloc);
+
 void cstring_grow(cstring *cstr, size_t len);
-void cstring_init(cstring *cstr);
 
 #endif  /* _CSTRING_H_ */
+
