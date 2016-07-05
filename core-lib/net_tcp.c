@@ -78,7 +78,7 @@ int net_tcp_socket_open(char *addr, int port, int use_ipv6)
 
         rv = getaddrinfo(addr, portstr, &hints, &sinfo);
         if (rv != 0) {
-                fprintf(stderr, "getaddrinfo(): %s", strerror(errno));
+                fprintf(stderr, "getaddrinfo() failed\n");
                 return -1;      /* FIXME: Need to return correct errors. */
         }
 
