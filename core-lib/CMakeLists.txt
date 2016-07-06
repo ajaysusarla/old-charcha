@@ -8,6 +8,7 @@ set(CHARCHA_CORE_LIB_SRCS
         cstring.c
         irc-core.c
         util.c
+        utf8.c
 )
 
 source_group("Charcha Core Library" FILES ${CHARCHA_CORE_LIB_SRCS})

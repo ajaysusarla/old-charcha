@@ -21,7 +21,8 @@ include_directories(${QT_INCLUDE_DIR})
 # Curses
 find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR})
-
+include_directories(core-lib)
+include_directories(con-ui-lib)
 ## Subdirectories ##
 add_subdirectory(core-lib)
 add_subdirectory(qt-ui-lib)
