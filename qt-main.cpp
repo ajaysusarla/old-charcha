@@ -18,7 +18,7 @@
 #include <QApplication>
 
 #include "core-lib/qt-gui.h"
-#include "ui-lib/mainwindow.h"
+#include "qt-ui-lib/mainwindow.h"
 
 int main(int argc, char **argv)
 {

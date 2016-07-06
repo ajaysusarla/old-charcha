@@ -136,7 +136,7 @@ static void process_server_msg(int sockfd, char *buf)
         }
 }
 
-static void process_msg(int sockfd, char *buf)
+static void process_msg(int sockfd, char *buf, int len)
 {
         char *word[32 + 1];
         char *word_eol[32 + 1];
@@ -153,7 +153,7 @@ static void process_msg(int sockfd, char *buf)
                 exit(EXIT_FAILURE);
         }
 
-        tokenize(token_buf, buf, word, word_eol);
+        /*tokenize(token_buf, buf, word, word_eol);*/
         /* Process server message */
         if (buf[0] == ':') {
         }
@@ -205,8 +205,8 @@ static void irc(int sockfd)
                 if (FD_ISSET(sockfd, &readfds)) {
                         ping = time(NULL);
                         nread = net_tcp_socket_read(sockfd, buf, BUF_SIZE);
-                        if (nread >= 0) {
-                                process_msg(sockfd, buf);
+                        if (nread > 0) {
+                                process_msg(sockfd, buf, nread);
                                 write(STDOUT, buf, nread);
                         }
                 }

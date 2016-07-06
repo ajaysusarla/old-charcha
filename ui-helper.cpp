@@ -12,7 +12,7 @@
 // License along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-#include "ui-lib/mainwindow.h"
+#include "qt-ui-lib/mainwindow.h"
 
 #include <QApplication>
 #include <QDesktopWidget>
