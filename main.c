@@ -34,6 +34,7 @@
 #define PING_TIMEOUT 300
 #define BUF_SIZE 2048
 
+
 static void print_version(void)
 {
         printf("%s v%s\n", PROGNAME, VERSION);
@@ -47,6 +48,7 @@ static void print_usage(void)
         printf("Usage: charcha [options]\n\n");
         printf("Options:\n");
         printf("  --server       IRC server to connect to.\n");
+        printf("  --port         IRC server's port to connect to.\n");
         printf("  --nick         IRC nick to use.\n");
         printf("  --help|-h      Print this help.\n");
         printf("  --version|-V   Print version.\n");
@@ -66,6 +68,9 @@ static void parse_arg(const char *arg)
                         exit(EXIT_SUCCESS);
                 case '-':
                         if (strcmp(arg, "--server") == 0) {
+                                continue;
+                        }
+                        if (strcmp(arg, "--port") == 0) {
                                 continue;
                         }
                         if (strcmp(arg, "--nick") == 0) {

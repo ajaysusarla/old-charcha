@@ -23,6 +23,11 @@
 #include <stdint.h>
 #include <limits.h>
 
+typedef enum {
+        FALSE = 0,
+        TRUE
+} bool_t;
+
 void *xmalloc(size_t size);
 void *xrealloc(void *ptr, size_t size);
 
@@ -116,5 +121,10 @@ static inline size_t st_mult(size_t a, size_t b)
 
         return a * b;
 }
+
+
+int file_change_mode_rw(const char *path);
+bool_t file_exists(const char *file);
+int file_rename(const char *oldpath, const char *newpath);
 
 #endif  /* _UTIL_H_ */

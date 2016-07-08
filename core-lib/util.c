@@ -17,6 +17,8 @@
 
 #include "util.h"
 
+#include <unistd.h>
+#include <sys/stat.h>
 
 void *xmalloc(size_t size)
 {
@@ -49,4 +51,43 @@ void *xrealloc(void *ptr, size_t size)
         }
 
         return ret;
+}
+
+/*
+  file_change_mode_rw():
+  returns 0 if mode changed successfully, -1 otherwise.
+ */
+int file_change_mode_rw(const char *path)
+{
+        if (path && path[0])
+                return chmod(path, S_IRUSR|S_IWUSR);
+}
+
+/*
+  file_exists():
+  returns TRUE if file exists, FALSE otherwise.
+ */
+bool_t file_exists(const char *file)
+{
+        if (file == NULL)
+                return FALSE;
+
+        if (access(file, F_OK) == 0)
+                return  TRUE;
+
+        return FALSE;
+}
+
+
+/*
+  file_rename():
+  returns 0 if mode changed successfully, -1 otherwise.
+ */
+int file_rename(const char *oldpath, const char *newpath)
+{
+        if ((oldpath  == NULL) || (newpath == NULL)) {
+                return -1;
+        }
+
+        return rename(oldpath, newpath);
 }
