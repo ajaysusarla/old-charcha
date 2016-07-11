@@ -14,34 +14,34 @@
  *
  */
 
-#ifndef _CONF_H_
-#define _CONF_H_
+#ifndef _CONF_COMMON_H_
+#define _CONF_COMMON_H_
 
-#include <stdio.h>
+#include "util.h"
+#include "conf.h"
 
-typedef enum {
-        C_STRING,
-        C_INT,
-        C_BOOL,
-        C_ENUM,
-        C_OTHER
-} confType;
+typedef struct _confCommon {
 
-typedef struct _confEntry {
-        char *name;
-        char *default_val;
-        void *data;
-        confType type;
-} confEntry;
+        /* View */
+        bool_t show_channel_list;
+        bool_t show_user_list;
+        bool_t show_time_stamps;
 
-typedef struct _confFile {
-        FILE *fp;
-        char *path;
-        char *tmppath;
-        size_t path_len;
-} confFile;
+        /* Spell Check */
+        bool_t check_spell;
+        char *spell_lang;
 
-confFile *conf_file_open(const char *path);
-int conf_file_close(confFile *cfile);
+        /* Misc */
+        bool_t confirm_on_exit;
 
-#endif  /* _CONF_H_ */
+        /* External Commands */
+        char *uri_open_cmd;
+
+} confCommon;
+
+extern confCommon conf_common;
+
+confCommon *conf_common_get(void);
+confEntry *conf_common_get_entries(void);
+
+#endif  /* _CONF_COMMON_H_ */

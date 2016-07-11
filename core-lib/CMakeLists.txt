@@ -9,6 +9,8 @@ set(CHARCHA_CORE_LIB_SRCS
         irc-core.c
         util.c
         conf.c
+        conf-common.c
+        conf-account.c
         utf8.c
 )
 

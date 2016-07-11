@@ -14,34 +14,4 @@
  *
  */
 
-#ifndef _CONF_H_
-#define _CONF_H_
-
-#include <stdio.h>
-
-typedef enum {
-        C_STRING,
-        C_INT,
-        C_BOOL,
-        C_ENUM,
-        C_OTHER
-} confType;
-
-typedef struct _confEntry {
-        char *name;
-        char *default_val;
-        void *data;
-        confType type;
-} confEntry;
-
-typedef struct _confFile {
-        FILE *fp;
-        char *path;
-        char *tmppath;
-        size_t path_len;
-} confFile;
-
-confFile *conf_file_open(const char *path);
-int conf_file_close(confFile *cfile);
-
-#endif  /* _CONF_H_ */
+#include "conf-account.h"

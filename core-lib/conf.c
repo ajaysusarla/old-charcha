@@ -21,9 +21,9 @@
 #include <unistd.h>
 
 
-ConfFile *conf_file_open(const char *path)
+confFile *conf_file_open(const char *path)
 {
-        ConfFile *cfile = NULL;
+        confFile *cfile = NULL;
         char *tmppath;
         FILE *fp;
         size_t path_len;
@@ -48,7 +48,7 @@ ConfFile *conf_file_open(const char *path)
         if (file_change_mode_rw(tmppath) < 0)
                 fprintf(stderr, "Could not chmod %s.\n", tmppath);
 
-        cfile = xmalloc(sizeof(ConfFile) * 1);
+        cfile = xmalloc(sizeof(confFile) * 1);
         cfile->fp = fp;
         cfile->path = strdup(path);
         cfile->tmppath = tmppath;
@@ -57,7 +57,7 @@ ConfFile *conf_file_open(const char *path)
         return cfile;
 }
 
-int conf_file_close(ConfFile *cfile)
+int conf_file_close(confFile *cfile)
 {
 
         if (fclose(cfile->fp) == EOF) {
