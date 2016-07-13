@@ -13,39 +13,23 @@ MACRO_ENSURE_OUT_OF_SOURCE_BUILD(
 option(MAKE_TESTS "Make the tests" OFF)
 
 ## Dependencies ##
-# Find the QtWidgets library
-find_package(Qt5 REQUIRED COMPONENTS Core Widgets Network Test)
-set(QT_LIBRARIES Qt5::Core Qt5::Widgets Qt5::Network)
-set(QT_TEST_LIBRARIES ${QT_LIBRARIES} Qt5::Test)
-include_directories(${QT_INCLUDE_DIR})
 # Curses
 find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR})
 include_directories(core-lib)
-include_directories(con-ui-lib)
+include_directories(ui-lib)
 ## Subdirectories ##
 add_subdirectory(core-lib)
-add_subdirectory(qt-ui-lib)
-add_subdirectory(con-ui-lib)
+add_subdirectory(ui-lib)
 
-add_executable(charcha-qt
-        ui-helper.cpp
-        qt-main.cpp
-)
 
 add_executable(charcha
         main.c
 )
 
-target_link_libraries(charcha-qt
-  charcha_core_lib
-  charcha_qt_ui_lib
-  ${QT_LIBRARIES}
-)
-
 target_link_libraries(charcha
   charcha_core_lib
-  charcha_con_ui_lib
+  charcha_ui_lib
   ${CURSES_LIBRARIES}
 )
 
