@@ -43,5 +43,6 @@ extern confCommon conf_common;
 
 confCommon *conf_common_get(void);
 confEntry *conf_common_get_entries(void);
+void conf_common_read_config(void);
 
 #endif  /* _CONF_COMMON_H_ */

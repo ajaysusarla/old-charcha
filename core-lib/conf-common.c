@@ -47,3 +47,8 @@ confEntry *conf_common_get_entries(void)
 {
         return entries;
 }
+
+void conf_common_read_config(void)
+{
+        FILE *fp;
+}

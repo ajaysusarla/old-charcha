@@ -19,6 +19,8 @@
 
 #include <stdio.h>
 
+#define CONFBUFSIZE 1024
+
 typedef enum {
         C_STRING,
         C_INT,
@@ -43,5 +45,7 @@ typedef struct _confFile {
 
 confFile *conf_file_open(const char *path);
 int conf_file_close(confFile *cfile);
+void conf_read_config(confEntry *entry, const char *section,
+                      const char *cfile, const char *encoding);
 
 #endif  /* _CONF_H_ */

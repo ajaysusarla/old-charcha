@@ -16,6 +16,7 @@
 
 #include "conf.h"
 #include "util.h"
+#include "htable.h"
 
 #include <string.h>
 #include <unistd.h>
@@ -111,4 +112,20 @@ int conf_file_close(confFile *cfile)
         free(cfile);
         cfile = NULL;
         return 0;
+}
+
+void conf_read_config(confEntry *entry, const char *section,
+                      const char *cfile, const char *encoding)
+{
+        FILE *fp;
+        char *buf[CONFBUFSIZE];
+        char *section_label;
+        HashTable *entry_ht;
+
+        if (!entry || !section || !cfile) {
+                fprintf(stderr, "Invalid arguments\n");
+                return;
+        }
+
+        /* FIXME: Incomplete - need to implement this. */
 }

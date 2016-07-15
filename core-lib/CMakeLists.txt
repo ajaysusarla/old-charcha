@@ -12,6 +12,7 @@ set(CHARCHA_CORE_LIB_SRCS
         conf-common.c
         conf-account.c
         utf8.c
+        htable.c
 )
 
 source_group("Charcha Core Library" FILES ${CHARCHA_CORE_LIB_SRCS})
