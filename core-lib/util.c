@@ -53,6 +53,39 @@ void *xrealloc(void *ptr, size_t size)
         return ret;
 }
 
+
+void *xcalloc(size_t nmemb, size_t size)
+{
+        void *ret = NULL;
+
+        if (!nmemb || !size)
+                return ret;
+
+        if (((size_t) - 1) / nmemb <= size) {
+                fprintf(stderr, "Memory allocation error\n");
+                exit(EXIT_FAILURE);
+        }
+
+        ret = (void *)calloc(nmemb, size);
+        if (!ret) {
+                fprintf(stderr, "Memory allocation error\n");
+                exit(EXIT_FAILURE);
+        }
+
+        return ret;
+
+
+}
+
+
+void xfree(void *ptr)
+{
+        if (ptr) {
+                free(ptr);
+                ptr = NULL;
+        }
+}
+
 /*
   file_change_mode_rw():
   returns 0 if mode changed successfully, -1 otherwise.
