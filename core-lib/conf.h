@@ -26,12 +26,14 @@ typedef enum {
         C_INT,
         C_BOOL,
         C_ENUM,
-        C_OTHER
+        C_USHORT,
+        C_OTHER,
+        NUM_CONF_TYPES
 } confType;
 
 typedef struct _confEntry {
         char *name;
-        char *default_val;
+        char *defval;
         void *data;
         confType type;
 } confEntry;

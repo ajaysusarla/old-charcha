@@ -232,6 +232,11 @@ int main(int argc, char **argv)
         int i;
         int sockfd;
 
+        if (argc <= 1) {
+                print_usage();
+                exit(EXIT_FAILURE);
+        }
+
         for (i = 1; i < argc; i++) {
                 const char *a = argv[i];
 

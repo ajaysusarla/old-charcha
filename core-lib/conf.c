@@ -21,6 +21,10 @@
 #include <string.h>
 #include <unistd.h>
 
+typedef enum
+{
+        A_PARAM
+} AnEnum;
 
 confFile *conf_file_open(const char *path)
 {
@@ -113,6 +117,86 @@ int conf_file_close(confFile *cfile)
         cfile = NULL;
         return 0;
 }
+
+void conf_set_default(confEntry *entries)
+{
+        int i;
+
+        if (entries == NULL) {
+                fprintf(stderr, "Invalid Entry!");
+                return;
+        }
+
+        for (i = 0; entries[i].name != NULL; i++) {
+                if (!entries[i].data)
+                        continue;
+
+                switch(entries[i].type) {
+                case C_STRING:
+                        if (entries[i].defval != NULL) {
+                                if (strncasecmp(entries[i].defval, "ENV_", 4)) {
+                                        /* Environment Variable */
+                                        char *envstr;
+                                        envstr = getenv(entries[i].defval + 4);
+                                        *((char **)entries[i].data) =
+                                                envstr ? strdup(envstr) : NULL;
+                                } else if(entries[i].defval[0] == '~') {
+                                        /* Path */
+                                } else if(entries[i].defval[0] != '\0') {
+                                        /* Regular String */
+                                        *((char **)entries[i].data) =
+                                                strdup(entries[i].defval);
+                                } else {
+                                        *((char **)entries[i].data) = NULL;
+                                }
+                        } else {
+                                *((char **)entries[i].data) = NULL;
+                        }
+                        break;
+                case C_INT:
+                        if (entries[i].defval != NULL) {
+                                *((int *)entries[i].data) =
+                                        (int)atoi(entries[i].defval);
+                        } else {
+                                *((int *)entries[i].data) = 0;
+                        }
+                        break;
+                case C_BOOL:
+                        if (entries[i].defval != NULL) {
+                                if (strncasecmp(entries[i].defval, "TRUE", 4))
+                                        *((bool_t *)entries[i].data) = TRUE;
+                                else if (strncasecmp(entries[i].defval, "FALSE", 5))
+                                        *((bool_t *)entries[i].data) = FALSE;
+                                else
+                                        *((bool_t *)entries[i].data) =
+                                                atoi(entries[i].defval) ? TRUE : FALSE;
+                        } else {
+                                *((bool_t *)entries[i].data) = FALSE;
+                        }
+                        break;
+                case C_ENUM:
+                        if (entries[i].defval != NULL) {
+                                *((AnEnum *)entries[i].data) =
+                                        (AnEnum)atoi(entries[i].defval);
+                        } else {
+                                *((AnEnum *)entries[i].data) = 0;
+                        }
+                        break;
+                case C_USHORT:
+                        if (entries[i].defval != NULL) {
+                                *((unsigned short *)entries[i].data) =
+                                        (unsigned short)atoi(entries[i].defval);
+                        } else {
+                                *((unsigned short *)entries[i].data) = 0;
+                        }
+                        break;
+                case C_OTHER:
+                default:
+                        break;
+                }
+        }
+}
+
 
 void conf_read_config(confEntry *entry, const char *section,
                       const char *cfile, const char *encoding)
