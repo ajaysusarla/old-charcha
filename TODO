@@ -1,0 +1,5 @@
+Things that need to be done, in order of importance:
+* account configuration
+* command line parsing
+* IRC lexer/tokeniser/parser
+* curses ui
